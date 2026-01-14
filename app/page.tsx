@@ -1,437 +1,299 @@
+/* eslint-disable react/no-unescaped-entities */
+"use client";
+import {
+  Rocket,
+  Beaker,
+  Cpu,
+  Code,
+  Zap,
+  Users,
+  Star,
+  Mail,
+  MapPin,
+  Phone,
+  ChevronRight,
+  Sparkles,
+} from "lucide-react";
+import { useEffect, useState } from "react";
+
 export default function Home() {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
-    <div className="min-h-screen bg-hero text-[color:var(--ink)]">
-      <main>
-        <section className="relative overflow-hidden px-6 pb-16 pt-16 lg:px-10 lg:pb-24">
-          <div className="mx-auto grid w-full max-w-6xl gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-            <div>
-              <div className="inline-flex items-center gap-2 rounded-full bg-black/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.26em] text-black/60">
-                Hands-on STEM dojo
-              </div>
-              <h1 className="mt-6 font-display text-5xl uppercase leading-none text-black sm:text-6xl lg:text-7xl">
-                Build. Code. Invent.
-                <span className="block text-[color:var(--ember)]">
-                  Canada is our lab.
+    <div className="min-h-screen bg-gradient-to-br from-yellow-50 via-orange-50 to-blue-50">
+      <section className="pt-32 pb-20 px-4 overflow-hidden">
+        <div className="container mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6 animate-fade-in">
+              <h1 className="text-5xl md:text-6xl font-bold leading-tight">
+                <span className="bg-gradient-to-r from-orange-600 via-red-500 to-blue-600 bg-clip-text text-transparent">
+                  Learn, Play, Create!
                 </span>
               </h1>
-              <p className="mt-6 max-w-xl text-lg text-black/70">
-                Turned-E Academy is a bold STEM education company in Canada. We
-                mix coding, robotics, and design challenges into a high-energy
-                learning experience for ages 7-17.
+              <p className="text-xl text-gray-700 leading-relaxed">
+                🍁 Canada's most exciting STEM education adventure! Join
+                turned-e! academy where science meets fun, and every student
+                becomes a future innovator!
               </p>
-              <div className="mt-8 flex flex-wrap items-center gap-4">
-                <button className="rounded-full bg-[color:var(--ember)] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-red-500/30 transition hover:-translate-y-0.5 hover:bg-[#c53827]">
-                  Start a Free Trial Class
+              <div className="flex flex-wrap gap-4">
+                <button className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:scale-105 transform transition-all shadow-lg hover:shadow-2xl flex items-center space-x-2">
+                  <span>Start Your Journey</span>
+                  <ChevronRight className="w-5 h-5" />
                 </button>
-                <button className="rounded-full border border-black/20 px-6 py-3 text-sm font-semibold text-black transition hover:border-black/40">
-                  View Program Guide
+                <button className="bg-white text-orange-600 px-8 py-4 rounded-full font-bold text-lg hover:scale-105 transform transition-all shadow-lg hover:shadow-2xl border-2 border-orange-500">
+                  Watch Video
                 </button>
-              </div>
-              <div className="mt-10 grid gap-4 sm:grid-cols-3">
-                <div className="rounded-2xl border border-black/10 bg-white/70 p-4">
-                  <p className="font-display text-3xl text-black">50+</p>
-                  <p className="text-xs uppercase tracking-[0.2em] text-black/60">
-                    STEM challenges
-                  </p>
-                </div>
-                <div className="rounded-2xl border border-black/10 bg-white/70 p-4">
-                  <p className="font-display text-3xl text-black">12</p>
-                  <p className="text-xs uppercase tracking-[0.2em] text-black/60">
-                    Canadian cities
-                  </p>
-                </div>
-                <div className="rounded-2xl border border-black/10 bg-white/70 p-4">
-                  <p className="font-display text-3xl text-black">1:6</p>
-                  <p className="text-xs uppercase tracking-[0.2em] text-black/60">
-                    mentor ratio
-                  </p>
-                </div>
               </div>
             </div>
+
             <div className="relative">
-              <div className="absolute -right-8 -top-10 h-24 w-24 rounded-full bg-[color:var(--sun)] opacity-80 blur-2xl" />
-              <div className="absolute -left-8 bottom-12 h-20 w-20 rounded-full bg-[color:var(--aqua)] opacity-70 blur-2xl" />
-              <div className="glass relative overflow-hidden rounded-[32px] p-8">
-                <div className="absolute right-6 top-6 h-3 w-3 rounded-full bg-[color:var(--ember)]" />
-                <div className="absolute right-12 top-6 h-3 w-3 rounded-full bg-[color:var(--sun)]" />
-                <div className="absolute right-[72px] top-6 h-3 w-3 rounded-full bg-[color:var(--aqua)]" />
-                <p className="text-xs uppercase tracking-[0.3em] text-black/50">
-                  Mission Control
-                </p>
-                <h2 className="mt-4 font-display text-4xl uppercase text-black">
-                  STEM league season
-                </h2>
-                <p className="mt-4 text-sm text-black/60">
-                  Weekly builds, rapid prototyping, and demo nights that turn
-                  curious learners into confident creators.
-                </p>
-                <div className="mt-6 grid gap-4">
-                  <div className="rounded-2xl bg-black/5 p-4">
-                    <p className="text-xs uppercase tracking-[0.24em] text-black/50">
-                      Current quests
-                    </p>
-                    <p className="mt-2 text-sm font-semibold text-black">
-                      Game dev sprint, Mars rover robotics, renewable energy lab
-                    </p>
+              <div className="floating">
+                <div className="bg-gradient-to-br from-blue-400 to-blue-600 rounded-3xl p-8 shadow-2xl transform rotate-3">
+                  <div className="bg-white rounded-2xl p-6 transform -rotate-3">
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="bg-orange-100 p-6 rounded-xl text-center hover:scale-110 transition-transform cursor-pointer floating-delayed">
+                        <Beaker className="w-12 h-12 text-orange-500 mx-auto mb-2" />
+                        <p className="font-bold text-orange-700">Science</p>
+                      </div>
+                      <div className="bg-green-100 p-6 rounded-xl text-center hover:scale-110 transition-transform cursor-pointer floating">
+                        <Cpu className="w-12 h-12 text-green-500 mx-auto mb-2" />
+                        <p className="font-bold text-green-700">Tech</p>
+                      </div>
+                      <div className="bg-blue-100 p-6 rounded-xl text-center hover:scale-110 transition-transform cursor-pointer floating-delayed">
+                        <Code className="w-12 h-12 text-blue-500 mx-auto mb-2" />
+                        <p className="font-bold text-blue-700">Engineering</p>
+                      </div>
+                      <div className="bg-red-100 p-6 rounded-xl text-center hover:scale-110 transition-transform cursor-pointer floating">
+                        <Zap className="w-12 h-12 text-red-500 mx-auto mb-2" />
+                        <p className="font-bold text-red-700">Math</p>
+                      </div>
+                    </div>
                   </div>
-                  <div className="rounded-2xl bg-black/5 p-4 float-slow">
-                    <p className="text-xs uppercase tracking-[0.24em] text-black/50">
-                      Next drop
-                    </p>
-                    <p className="mt-2 text-sm font-semibold text-black">
-                      AI creativity studio and 3D printing bootcamp
-                    </p>
-                  </div>
-                </div>
-                <div className="mt-6 flex items-center justify-between">
-                  <p className="text-xs uppercase tracking-[0.24em] text-black/50">
-                    Coast to coast
-                  </p>
-                  <button className="rounded-full bg-black px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-white">
-                    View labs
-                  </button>
                 </div>
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="bg-[color:var(--night)] px-6 py-10 text-white lg:px-10">
-          <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-            <p className="font-display text-3xl uppercase tracking-wide">
-              STEM confidence starts with real projects.
+      <section id="about" className="py-20 px-4 bg-white">
+        <div className="container mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent">
+              What Makes Us Special? 🌟
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              We're not just another education company - we're a launchpad for
+              young minds!
             </p>
-            <div className="flex flex-wrap gap-6 text-sm text-white/70">
-              <span>After-school + weekend programs</span>
-              <span>Camp intensives</span>
-              <span>School partnerships</span>
-              <span>Mobile labs</span>
-            </div>
           </div>
-        </section>
 
-        <section id="programs" className="px-6 py-20 lg:px-10">
-          <div className="mx-auto w-full max-w-6xl">
-            <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-              <div>
-                <p className="text-xs uppercase tracking-[0.3em] text-black/50">
-                  Programs
-                </p>
-                <h2 className="mt-3 font-display text-4xl uppercase text-black">
-                  Choose your mission track
-                </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-gradient-to-br from-orange-100 to-orange-50 p-8 rounded-3xl hover:shadow-2xl transition-all transform hover:-translate-y-2 cursor-pointer">
+              <div className="bg-orange-500 w-16 h-16 rounded-2xl flex items-center justify-center mb-4 animate-bounce">
+                <Sparkles className="w-8 h-8 text-white" />
               </div>
-              <p className="max-w-md text-sm text-black/60">
-                A rotating curriculum that blends creativity with core STEM
-                skills. Every track ends in a public demo that shows real
-                progress.
+              <h3 className="text-2xl font-bold mb-3 text-orange-700">
+                Fun-First Learning
+              </h3>
+              <p className="text-gray-700">
+                Who says learning can't be hilarious? We mix education with
+                games, jokes, and lots of "aha!" moments!
               </p>
             </div>
-            <div className="mt-10 grid gap-6 lg:grid-cols-3">
-              <div className="rounded-3xl border border-black/10 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[color:var(--sun)] text-black font-display text-2xl">
-                  C
-                </div>
-                <h3 className="mt-6 font-display text-3xl uppercase text-black">
-                  Code & Game Design
-                </h3>
-                <p className="mt-3 text-sm text-black/60">
-                  Build playable worlds with JavaScript, Unity, and pixel art
-                  labs.
-                </p>
-                <p className="mt-6 text-xs uppercase tracking-[0.24em] text-black/50">
-                  Ages 7-13
-                </p>
+
+            <div className="bg-gradient-to-br from-blue-100 to-blue-50 p-8 rounded-3xl hover:shadow-2xl transition-all transform hover:-translate-y-2 cursor-pointer">
+              <div
+                className="bg-blue-500 w-16 h-16 rounded-2xl flex items-center justify-center mb-4 animate-bounce"
+                style={{ animationDelay: "0.1s" }}
+              >
+                <Users className="w-8 h-8 text-white" />
               </div>
-              <div className="rounded-3xl border border-black/10 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[color:var(--aqua)] text-black font-display text-2xl">
-                  R
-                </div>
-                <h3 className="mt-6 font-display text-3xl uppercase text-black">
-                  Robotics & Engineering
-                </h3>
-                <p className="mt-3 text-sm text-black/60">
-                  Prototype robots, circuit boards, and autonomous challenges.
-                </p>
-                <p className="mt-6 text-xs uppercase tracking-[0.24em] text-black/50">
-                  Ages 9-15
-                </p>
+              <h3 className="text-2xl font-bold mb-3 text-blue-700">
+                Expert Instructors
+              </h3>
+              <p className="text-gray-700">
+                Our teachers are like superheroes - with PhDs! They make rocket
+                science feel like a playground adventure.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-green-100 to-green-50 p-8 rounded-3xl hover:shadow-2xl transition-all transform hover:-translate-y-2 cursor-pointer">
+              <div
+                className="bg-green-500 w-16 h-16 rounded-2xl flex items-center justify-center mb-4 animate-bounce"
+                style={{ animationDelay: "0.2s" }}
+              >
+                <Star className="w-8 h-8 text-white" />
               </div>
-              <div className="rounded-3xl border border-black/10 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[color:var(--ember)] text-white font-display text-2xl">
-                  S
-                </div>
-                <h3 className="mt-6 font-display text-3xl uppercase text-black">
-                  Science & Innovation
-                </h3>
-                <p className="mt-3 text-sm text-black/60">
-                  Chemistry labs, climate tech, and invention sprints.
-                </p>
-                <p className="mt-6 text-xs uppercase tracking-[0.24em] text-black/50">
-                  Ages 8-17
-                </p>
-              </div>
+              <h3 className="text-2xl font-bold mb-3 text-green-700">
+                Hands-On Projects
+              </h3>
+              <p className="text-gray-700">
+                Build robots, code games, launch rockets! You'll create things
+                so cool, your friends will be jealous.
+              </p>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section
-          id="pathway"
-          className="bg-[color:var(--sand-dark)] px-6 py-20 lg:px-10"
-        >
-          <div className="mx-auto w-full max-w-6xl">
-            <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">
-              <div>
-                <p className="text-xs uppercase tracking-[0.3em] text-black/50">
-                  Pathway
-                </p>
-                <h2 className="mt-3 font-display text-4xl uppercase text-black">
-                  A clear STEM journey from curious to confident
-                </h2>
-                <p className="mt-4 text-sm text-black/60">
-                  Students level up every 8 weeks with new studio roles,
-                  capstones, and leadership opportunities.
-                </p>
-                <div className="mt-6 space-y-4 text-sm text-black/70">
-                  <div className="rounded-2xl bg-white/70 p-4">
-                    <p className="font-semibold text-black">
-                      Level 1: Explorer
-                    </p>
-                    <p>
-                      Foundations in coding logic, design thinking, teamwork.
-                    </p>
-                  </div>
-                  <div className="rounded-2xl bg-white/70 p-4">
-                    <p className="font-semibold text-black">Level 2: Builder</p>
-                    <p>
-                      Robotics builds, game loops, electronics, rapid iteration.
-                    </p>
-                  </div>
-                  <div className="rounded-2xl bg-white/70 p-4">
-                    <p className="font-semibold text-black">
-                      Level 3: Innovator
-                    </p>
-                    <p>Mentor juniors, pitch demos, solve real-world briefs.</p>
-                  </div>
-                </div>
-              </div>
-              <div className="rounded-[32px] bg-[color:var(--night)] p-8 text-white">
-                <p className="text-xs uppercase tracking-[0.3em] text-white/60">
-                  Skill spotlight
-                </p>
-                <h3 className="mt-4 font-display text-4xl uppercase">
-                  Future-ready skills
-                </h3>
-                <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                  {[
-                    "Python + JavaScript",
-                    "Robotics + sensors",
-                    "3D modeling",
-                    "Product design",
-                    "AI creativity labs",
-                    "Entrepreneurship",
-                  ].map((item) => (
-                    <div
-                      key={item}
-                      className="rounded-2xl border border-white/15 bg-white/5 px-4 py-3 text-sm"
-                    >
-                      {item}
-                    </div>
-                  ))}
-                </div>
-                <button className="mt-8 w-full rounded-full bg-[color:var(--sun)] py-3 text-sm font-semibold text-black">
-                  Download Course Map
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="locations" className="px-6 py-20 lg:px-10">
-          <div className="mx-auto w-full max-w-6xl">
-            <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-              <div className="rounded-[32px] border border-black/10 bg-grid p-8">
-                <div className="rounded-[24px] bg-white/90 p-6 shadow-lg">
-                  <p className="text-xs uppercase tracking-[0.3em] text-black/50">
-                    Canada wide
-                  </p>
-                  <h3 className="mt-4 font-display text-4xl uppercase text-black">
-                    Labs and mobile studios
-                  </h3>
-                  <p className="mt-4 text-sm text-black/60">
-                    From Toronto to Vancouver, we deliver after-school programs,
-                    weekend intensives, and school partnerships tailored for
-                    each community.
-                  </p>
-                  <div className="mt-6 grid gap-3 text-sm text-black/70 sm:grid-cols-2">
-                    <span>Toronto</span>
-                    <span>Ottawa</span>
-                    <span>Vancouver</span>
-                    <span>Calgary</span>
-                    <span>Montreal</span>
-                    <span>Halifax</span>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <p className="text-xs uppercase tracking-[0.3em] text-black/50">
-                  Why parents choose us
-                </p>
-                <h2 className="mt-3 font-display text-4xl uppercase text-black">
-                  A high-energy learning culture
-                </h2>
-                <div className="mt-6 space-y-4 text-sm text-black/70">
-                  <div className="rounded-2xl border border-black/10 bg-white p-4">
-                    <p className="font-semibold text-black">
-                      Studio mentors, not lectures
-                    </p>
-                    <p>Small squads, guided builds, rapid feedback loops.</p>
-                  </div>
-                  <div className="rounded-2xl border border-black/10 bg-white p-4">
-                    <p className="font-semibold text-black">Showcase moments</p>
-                    <p>Every 8 weeks ends with a demo night and badges.</p>
-                  </div>
-                  <div className="rounded-2xl border border-black/10 bg-white p-4">
-                    <p className="font-semibold text-black">
-                      Inclusive by design
-                    </p>
-                    <p>
-                      Programs built to welcome all skill levels and genders.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="bg-[color:var(--night)] px-6 py-20 text-white lg:px-10">
-          <div className="mx-auto w-full max-w-6xl">
-            <div className="grid gap-8 lg:grid-cols-[1fr_1.1fr] lg:items-center">
-              <div>
-                <p className="text-xs uppercase tracking-[0.3em] text-white/60">
-                  STEM outcomes
-                </p>
-                <h2 className="mt-3 font-display text-4xl uppercase">
-                  Creativity meets career skills
-                </h2>
-                <p className="mt-4 text-sm text-white/70">
-                  Students graduate with portfolios, confidence, and the ability
-                  to collaborate like a real product team.
-                </p>
-              </div>
-              <div className="grid gap-4 sm:grid-cols-2">
-                {[
-                  "Portfolio-ready capstones",
-                  "Pitch decks and demos",
-                  "Leadership coaching",
-                  "Industry guest mentors",
-                ].map((item) => (
-                  <div
-                    key={item}
-                    className="rounded-2xl border border-white/15 bg-white/5 p-4 text-sm"
-                  >
-                    {item}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="stories" className="px-6 py-20 lg:px-10">
-          <div className="mx-auto w-full max-w-6xl">
-            <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-              <div>
-                <p className="text-xs uppercase tracking-[0.3em] text-black/50">
-                  Stories
-                </p>
-                <h2 className="mt-3 font-display text-4xl uppercase text-black">
-                  Families feel the difference
-                </h2>
-              </div>
-              <button className="rounded-full border border-black/20 px-5 py-2 text-sm font-semibold text-black">
-                Read more reviews
-              </button>
-            </div>
-            <div className="mt-10 grid gap-6 lg:grid-cols-3">
-              {[
-                {
-                  quote:
-                    "My son built a robot and now wants to be an engineer. The mentors make STEM feel exciting.",
-                  name: "Priya M.",
-                  city: "Toronto",
-                },
-                {
-                  quote:
-                    "Every class is hands-on. The demo nights keep my daughter motivated and proud.",
-                  name: "Lucas W.",
-                  city: "Vancouver",
-                },
-                {
-                  quote:
-                    "Turned-E blends creativity with real coding. We love the community vibe.",
-                  name: "Danielle C.",
-                  city: "Ottawa",
-                },
-              ].map((story) => (
-                <div
-                  key={story.name}
-                  className="rounded-3xl border border-black/10 bg-white p-6 shadow-sm"
-                >
-                  <p className="text-sm text-black/70">{story.quote}</p>
-                  <p className="mt-6 text-xs uppercase tracking-[0.24em] text-black/50">
-                    {story.name} · {story.city}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="px-6 pb-24 lg:px-10">
-          <div className="mx-auto w-full max-w-6xl rounded-[36px] bg-[color:var(--sun)] p-10 text-black shadow-xl">
-            <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
-              <div>
-                <p className="text-xs uppercase tracking-[0.3em] text-black/60">
-                  Ready to join?
-                </p>
-                <h2 className="mt-3 font-display text-4xl uppercase">
-                  Turned-E Academy is open for enrollment
-                </h2>
-                <p className="mt-4 text-sm text-black/70">
-                  Book a tour, meet the mentors, and grab a spot in our next
-                  cohort.
-                </p>
-              </div>
-              <div className="flex flex-col gap-4">
-                <button className="rounded-full bg-black px-6 py-3 text-sm font-semibold text-white">
-                  Schedule a Visit
-                </button>
-                <button className="rounded-full border border-black/30 px-6 py-3 text-sm font-semibold text-black">
-                  Download Parent Packet
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      <footer className="border-t border-black/10 bg-white px-6 py-10 lg:px-10">
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-          <div>
-            <p className="font-display text-2xl uppercase text-black">
-              Turned-E Academy
-            </p>
-            <p className="text-sm text-black/60">
-              STEM education for Canadian innovators.
+      <section
+        id="programs"
+        className="py-20 px-4 bg-gradient-to-br from-orange-50 to-yellow-50"
+      >
+        <div className="container mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
+              Amazing Programs 🚀
+            </h2>
+            <p className="text-xl text-gray-600">
+              Choose your adventure in the world of STEM!
             </p>
           </div>
-          <div className="flex flex-wrap gap-6 text-sm text-black/60">
-            <span>hello@turnede.ca</span>
-            <span>1-800-555-0199</span>
-            <span>Follow: Instagram · YouTube · LinkedIn</span>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-white rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all transform hover:scale-105">
+              <div className="bg-gradient-to-br from-red-500 to-orange-500 w-20 h-20 rounded-2xl flex items-center justify-center mb-4 mx-auto">
+                <Rocket className="w-10 h-10 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-center mb-2 text-gray-800">
+                Robotics
+              </h3>
+              <p className="text-gray-600 text-center text-sm">
+                Build and program awesome robots that actually move!
+              </p>
+            </div>
+
+            <div className="bg-white rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all transform hover:scale-105">
+              <div className="bg-gradient-to-br from-blue-500 to-cyan-500 w-20 h-20 rounded-2xl flex items-center justify-center mb-4 mx-auto">
+                <Code className="w-10 h-10 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-center mb-2 text-gray-800">
+                Coding
+              </h3>
+              <p className="text-gray-600 text-center text-sm">
+                Create games, apps, and websites like a pro developer!
+              </p>
+            </div>
+
+            <div className="bg-white rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all transform hover:scale-105">
+              <div className="bg-gradient-to-br from-green-500 to-emerald-500 w-20 h-20 rounded-2xl flex items-center justify-center mb-4 mx-auto">
+                <Beaker className="w-10 h-10 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-center mb-2 text-gray-800">
+                Science Labs
+              </h3>
+              <p className="text-gray-600 text-center text-sm">
+                Explode, fizz, and discover the magic of science!
+              </p>
+            </div>
+
+            <div className="bg-white rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all transform hover:scale-105">
+              <div className="bg-gradient-to-br from-yellow-500 to-orange-500 w-20 h-20 rounded-2xl flex items-center justify-center mb-4 mx-auto">
+                <Zap className="w-10 h-10 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-center mb-2 text-gray-800">
+                Math Masters
+              </h3>
+              <p className="text-gray-600 text-center text-sm">
+                Crack codes and solve puzzles that'll blow your mind!
+              </p>
+            </div>
           </div>
+        </div>
+      </section>
+
+      <section
+        id="why-us"
+        className="py-20 px-4 bg-gradient-to-br from-blue-600 to-cyan-500 text-white"
+      >
+        <div className="container mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8">
+            Join 10,000+ Happy Learners! 🎉
+          </h2>
+          <div className="grid md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+            <div className="bg-white/20 backdrop-blur-lg rounded-2xl p-6 hover:bg-white/30 transition-all">
+              <p className="text-5xl font-bold mb-2">98%</p>
+              <p className="text-lg">Satisfaction Rate</p>
+            </div>
+            <div className="bg-white/20 backdrop-blur-lg rounded-2xl p-6 hover:bg-white/30 transition-all">
+              <p className="text-5xl font-bold mb-2">50+</p>
+              <p className="text-lg">Expert Teachers</p>
+            </div>
+            <div className="bg-white/20 backdrop-blur-lg rounded-2xl p-6 hover:bg-white/30 transition-all">
+              <p className="text-5xl font-bold mb-2">100+</p>
+              <p className="text-lg">Fun Courses</p>
+            </div>
+            <div className="bg-white/20 backdrop-blur-lg rounded-2xl p-6 hover:bg-white/30 transition-all">
+              <p className="text-5xl font-bold mb-2">15+</p>
+              <p className="text-lg">Years Experience</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="py-20 px-4 bg-white">
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent">
+              Ready to Start? 🎯
+            </h2>
+            <p className="text-xl text-gray-600">
+              Let's make learning the best part of your day!
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            <div className="bg-gradient-to-br from-orange-100 to-orange-50 p-6 rounded-2xl text-center">
+              <Mail className="w-8 h-8 text-orange-500 mx-auto mb-3" />
+              <p className="font-bold text-gray-800 mb-1">Email Us</p>
+              <p className="text-sm text-gray-600">hello@turned-e.ca</p>
+            </div>
+            <div className="bg-gradient-to-br from-blue-100 to-blue-50 p-6 rounded-2xl text-center">
+              <Phone className="w-8 h-8 text-blue-500 mx-auto mb-3" />
+              <p className="font-bold text-gray-800 mb-1">Call Us</p>
+              <p className="text-sm text-gray-600">1-800-STEM-FUN</p>
+            </div>
+            <div className="bg-gradient-to-br from-green-100 to-green-50 p-6 rounded-2xl text-center">
+              <MapPin className="w-8 h-8 text-green-500 mx-auto mb-3" />
+              <p className="font-bold text-gray-800 mb-1">Visit Us</p>
+              <p className="text-sm text-gray-600">Toronto, Canada 🍁</p>
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-br from-orange-500 to-red-500 rounded-3xl p-12 text-center text-white shadow-2xl">
+            <h3 className="text-3xl font-bold mb-4">
+              🎊 Special Offer: First Class FREE!
+            </h3>
+            <p className="text-lg mb-6">
+              Try any program for free and see why kids can't stop talking about
+              us!
+            </p>
+            <button className="bg-white text-orange-600 px-10 py-4 rounded-full font-bold text-lg hover:scale-105 transform transition-all shadow-lg">
+              Claim Your Free Class
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <footer className="bg-gray-900 text-white py-12 px-4">
+        <div className="container mx-auto text-center">
+          <div className="flex items-center justify-center space-x-2 mb-4">
+            <Rocket className="w-8 h-8 text-orange-500" />
+            <span className="text-2xl font-bold">turned-e! academy</span>
+          </div>
+          <p className="text-gray-400 mb-4">
+            Inspiring the next generation of innovators across Canada 🍁
+          </p>
+          <p className="text-sm text-gray-500">
+            © 2024 turned-e! academy. All rights reserved. | Made with ❤️ and
+            lots of code
+          </p>
         </div>
       </footer>
     </div>
