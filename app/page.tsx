@@ -1,44 +1,6 @@
 export default function Home() {
   return (
     <div className="min-h-screen bg-hero text-[color:var(--ink)]">
-      <header className="sticky top-0 z-20 border-b border-black/5 bg-white/80 backdrop-blur">
-        <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4 lg:px-10">
-          <div className="flex items-center gap-3">
-            <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[color:var(--ember)] text-white font-display text-xl">
-              TE
-            </span>
-            <div>
-              <p className="font-display text-2xl leading-none">Turned-E Academy</p>
-              <p className="text-xs uppercase tracking-[0.22em] text-black/50">
-                STEM education Canada
-              </p>
-            </div>
-          </div>
-          <nav className="hidden items-center gap-8 text-sm font-medium text-black/70 lg:flex">
-            <a className="hover:text-black" href="#programs">
-              Programs
-            </a>
-            <a className="hover:text-black" href="#pathway">
-              Pathway
-            </a>
-            <a className="hover:text-black" href="#locations">
-              Locations
-            </a>
-            <a className="hover:text-black" href="#stories">
-              Stories
-            </a>
-          </nav>
-          <div className="flex items-center gap-3">
-            <button className="hidden rounded-full border border-black/15 px-4 py-2 text-sm font-semibold text-black/70 transition hover:border-black/40 hover:text-black lg:inline-flex">
-              Parent Portal
-            </button>
-            <button className="rounded-full bg-[color:var(--night)] px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-black/20 transition hover:-translate-y-0.5 hover:bg-black">
-              Book a Tour
-            </button>
-          </div>
-        </div>
-      </header>
-
       <main>
         <section className="relative overflow-hidden px-6 pb-16 pt-16 lg:px-10 lg:pb-24">
           <div className="mx-auto grid w-full max-w-6xl gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
@@ -48,12 +10,14 @@ export default function Home() {
               </div>
               <h1 className="mt-6 font-display text-5xl uppercase leading-none text-black sm:text-6xl lg:text-7xl">
                 Build. Code. Invent.
-                <span className="block text-[color:var(--ember)]">Canada is our lab.</span>
+                <span className="block text-[color:var(--ember)]">
+                  Canada is our lab.
+                </span>
               </h1>
               <p className="mt-6 max-w-xl text-lg text-black/70">
-                Turned-E Academy is a bold STEM education company in Canada. We mix
-                coding, robotics, and design challenges into a high-energy learning
-                experience for ages 7-17.
+                Turned-E Academy is a bold STEM education company in Canada. We
+                mix coding, robotics, and design challenges into a high-energy
+                learning experience for ages 7-17.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <button className="rounded-full bg-[color:var(--ember)] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-red-500/30 transition hover:-translate-y-0.5 hover:bg-[#c53827]">
@@ -98,8 +62,8 @@ export default function Home() {
                   STEM league season
                 </h2>
                 <p className="mt-4 text-sm text-black/60">
-                  Weekly builds, rapid prototyping, and demo nights that turn curious
-                  learners into confident creators.
+                  Weekly builds, rapid prototyping, and demo nights that turn
+                  curious learners into confident creators.
                 </p>
                 <div className="mt-6 grid gap-4">
                   <div className="rounded-2xl bg-black/5 p-4">
@@ -158,8 +122,9 @@ export default function Home() {
                 </h2>
               </div>
               <p className="max-w-md text-sm text-black/60">
-                A rotating curriculum that blends creativity with core STEM skills.
-                Every track ends in a public demo that shows real progress.
+                A rotating curriculum that blends creativity with core STEM
+                skills. Every track ends in a public demo that shows real
+                progress.
               </p>
             </div>
             <div className="mt-10 grid gap-6 lg:grid-cols-3">
@@ -171,7 +136,8 @@ export default function Home() {
                   Code & Game Design
                 </h3>
                 <p className="mt-3 text-sm text-black/60">
-                  Build playable worlds with JavaScript, Unity, and pixel art labs.
+                  Build playable worlds with JavaScript, Unity, and pixel art
+                  labs.
                 </p>
                 <p className="mt-6 text-xs uppercase tracking-[0.24em] text-black/50">
                   Ages 7-13
@@ -209,7 +175,10 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="pathway" className="bg-[color:var(--sand-dark)] px-6 py-20 lg:px-10">
+        <section
+          id="pathway"
+          className="bg-[color:var(--sand-dark)] px-6 py-20 lg:px-10"
+        >
           <div className="mx-auto w-full max-w-6xl">
             <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">
               <div>
@@ -220,20 +189,28 @@ export default function Home() {
                   A clear STEM journey from curious to confident
                 </h2>
                 <p className="mt-4 text-sm text-black/60">
-                  Students level up every 8 weeks with new studio roles, capstones,
-                  and leadership opportunities.
+                  Students level up every 8 weeks with new studio roles,
+                  capstones, and leadership opportunities.
                 </p>
                 <div className="mt-6 space-y-4 text-sm text-black/70">
                   <div className="rounded-2xl bg-white/70 p-4">
-                    <p className="font-semibold text-black">Level 1: Explorer</p>
-                    <p>Foundations in coding logic, design thinking, teamwork.</p>
+                    <p className="font-semibold text-black">
+                      Level 1: Explorer
+                    </p>
+                    <p>
+                      Foundations in coding logic, design thinking, teamwork.
+                    </p>
                   </div>
                   <div className="rounded-2xl bg-white/70 p-4">
                     <p className="font-semibold text-black">Level 2: Builder</p>
-                    <p>Robotics builds, game loops, electronics, rapid iteration.</p>
+                    <p>
+                      Robotics builds, game loops, electronics, rapid iteration.
+                    </p>
                   </div>
                   <div className="rounded-2xl bg-white/70 p-4">
-                    <p className="font-semibold text-black">Level 3: Innovator</p>
+                    <p className="font-semibold text-black">
+                      Level 3: Innovator
+                    </p>
                     <p>Mentor juniors, pitch demos, solve real-world briefs.</p>
                   </div>
                 </div>
@@ -283,8 +260,8 @@ export default function Home() {
                   </h3>
                   <p className="mt-4 text-sm text-black/60">
                     From Toronto to Vancouver, we deliver after-school programs,
-                    weekend intensives, and school partnerships tailored for each
-                    community.
+                    weekend intensives, and school partnerships tailored for
+                    each community.
                   </p>
                   <div className="mt-6 grid gap-3 text-sm text-black/70 sm:grid-cols-2">
                     <span>Toronto</span>
@@ -315,8 +292,12 @@ export default function Home() {
                     <p>Every 8 weeks ends with a demo night and badges.</p>
                   </div>
                   <div className="rounded-2xl border border-black/10 bg-white p-4">
-                    <p className="font-semibold text-black">Inclusive by design</p>
-                    <p>Programs built to welcome all skill levels and genders.</p>
+                    <p className="font-semibold text-black">
+                      Inclusive by design
+                    </p>
+                    <p>
+                      Programs built to welcome all skill levels and genders.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -335,8 +316,8 @@ export default function Home() {
                   Creativity meets career skills
                 </h2>
                 <p className="mt-4 text-sm text-white/70">
-                  Students graduate with portfolios, confidence, and the ability to
-                  collaborate like a real product team.
+                  Students graduate with portfolios, confidence, and the ability
+                  to collaborate like a real product team.
                 </p>
               </div>
               <div className="grid gap-4 sm:grid-cols-2">
@@ -398,7 +379,7 @@ export default function Home() {
                   key={story.name}
                   className="rounded-3xl border border-black/10 bg-white p-6 shadow-sm"
                 >
-                  <p className="text-sm text-black/70">"{story.quote}"</p>
+                  <p className="text-sm text-black/70">{story.quote}</p>
                   <p className="mt-6 text-xs uppercase tracking-[0.24em] text-black/50">
                     {story.name} · {story.city}
                   </p>
@@ -419,7 +400,8 @@ export default function Home() {
                   Turned-E Academy is open for enrollment
                 </h2>
                 <p className="mt-4 text-sm text-black/70">
-                  Book a tour, meet the mentors, and grab a spot in our next cohort.
+                  Book a tour, meet the mentors, and grab a spot in our next
+                  cohort.
                 </p>
               </div>
               <div className="flex flex-col gap-4">

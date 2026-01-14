@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Bebas_Neue, Space_Grotesk } from "next/font/google";
+import SiteHeader from "./components/SiteHeader";
 import "./globals.css";
 
 const bebasNeue = Bebas_Neue({
@@ -27,6 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${bebasNeue.variable} ${spaceGrotesk.variable}`}>
+        <SiteHeader />
         {children}
       </body>
     </html>
