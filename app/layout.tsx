@@ -27,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${bebasNeue.variable} ${spaceGrotesk.variable}`}>
+      <body suppressHydrationWarning className={`${bebasNeue.variable} ${spaceGrotesk.variable}`}>
         <SiteHeader />
         {children}
       </body>
