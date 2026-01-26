@@ -25,27 +25,27 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   return (
-    <div className="min-h-screen bg-gradient-to-br from-yellow-50 via-orange-50 to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
       <section className="pt-32 pb-20 px-4 overflow-hidden">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 animate-fade-in">
               <h1 className="text-5xl md:text-6xl font-bold leading-tight">
-                <span className="bg-gradient-to-r from-orange-600 via-red-500 to-blue-600 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-indigo-600 bg-clip-text text-transparent">
                   Learn, Play, Create!
                 </span>
               </h1>
-              <p className="text-xl text-gray-700 leading-relaxed">
+              <p className="text-xl text-white leading-relaxed">
                 🍁 Canada's most exciting STEM education adventure! Join
                 turned-e! academy where science meets fun, and every student
                 becomes a future innovator!
               </p>
               <div className="flex flex-wrap gap-4">
-                <button className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:scale-105 transform transition-all shadow-lg hover:shadow-2xl flex items-center space-x-2">
+                <button className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:scale-105 transform transition-all shadow-lg hover:shadow-2xl flex items-center space-x-2">
                   <span>Start Your Journey</span>
                   <ChevronRight className="w-5 h-5" />
                 </button>
-                <button className="bg-white text-orange-600 px-8 py-4 rounded-full font-bold text-lg hover:scale-105 transform transition-all shadow-lg hover:shadow-2xl border-2 border-orange-500">
+                <button className="bg-white text-blue-600 px-8 py-4 rounded-full font-bold text-lg hover:scale-105 transform transition-all shadow-lg hover:shadow-2xl border-2 border-blue-500">
                   Watch Video
                 </button>
               </div>
@@ -56,9 +56,9 @@ export default function Home() {
                 <div className="bg-gradient-to-br from-blue-400 to-blue-600 rounded-3xl p-8 shadow-2xl transform rotate-3">
                   <div className="bg-white rounded-2xl p-6 transform -rotate-3">
                     <div className="grid grid-cols-2 gap-4">
-                      <div className="bg-orange-100 p-6 rounded-xl text-center hover:scale-110 transition-transform cursor-pointer floating-delayed">
-                        <Beaker className="w-12 h-12 text-orange-500 mx-auto mb-2" />
-                        <p className="font-bold text-orange-700">Science</p>
+                      <div className="bg-blue-100 p-6 rounded-xl text-center hover:scale-110 transition-transform cursor-pointer floating-delayed">
+                        <Beaker className="w-12 h-12 text-blue-500 mx-auto mb-2" />
+                        <p className="font-bold text-blue-700">Science</p>
                       </div>
                       <div className="bg-green-100 p-6 rounded-xl text-center hover:scale-110 transition-transform cursor-pointer floating">
                         <Cpu className="w-12 h-12 text-green-500 mx-auto mb-2" />
@@ -84,7 +84,7 @@ export default function Home() {
       <section id="about" className="py-20 px-4 bg-white">
         <div className="container mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
               What Makes Us Special? 🌟
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -94,11 +94,11 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-gradient-to-br from-orange-100 to-orange-50 p-8 rounded-3xl hover:shadow-2xl transition-all transform hover:-translate-y-2 cursor-pointer">
-              <div className="bg-orange-500 w-16 h-16 rounded-2xl flex items-center justify-center mb-4 animate-bounce">
+            <div className="bg-gradient-to-br from-blue-100 to-blue-50 p-8 rounded-3xl hover:shadow-2xl transition-all transform hover:-translate-y-2 cursor-pointer">
+              <div className="bg-blue-500 w-16 h-16 rounded-2xl flex items-center justify-center mb-4 animate-bounce">
                 <Sparkles className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-bold mb-3 text-orange-700">
+              <h3 className="text-2xl font-bold mb-3 text-blue-700">
                 Fun-First Learning
               </h3>
               <p className="text-gray-700">
@@ -144,7 +144,7 @@ export default function Home() {
 
       <section
         id="programs"
-        className="py-20 px-4 bg-gradient-to-br from-orange-50 to-yellow-50"
+        className="py-20 px-4 bg-gradient-to-br from-blue-50 to-cyan-50"
       >
         <div className="container mx-auto">
           <div className="text-center mb-16">
@@ -158,7 +158,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-white rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all transform hover:scale-105">
-              <div className="bg-gradient-to-br from-red-500 to-orange-500 w-20 h-20 rounded-2xl flex items-center justify-center mb-4 mx-auto">
+              <div className="bg-gradient-to-br from-blue-500 to-cyan-500 w-20 h-20 rounded-2xl flex items-center justify-center mb-4 mx-auto">
                 <Rocket className="w-10 h-10 text-white" />
               </div>
               <h3 className="text-xl font-bold text-center mb-2 text-gray-800">
@@ -194,7 +194,7 @@ export default function Home() {
             </div>
 
             <div className="bg-white rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all transform hover:scale-105">
-              <div className="bg-gradient-to-br from-yellow-500 to-orange-500 w-20 h-20 rounded-2xl flex items-center justify-center mb-4 mx-auto">
+              <div className="bg-gradient-to-br from-cyan-500 to-blue-500 w-20 h-20 rounded-2xl flex items-center justify-center mb-4 mx-auto">
                 <Zap className="w-10 h-10 text-white" />
               </div>
               <h3 className="text-xl font-bold text-center mb-2 text-gray-800">
@@ -240,7 +240,7 @@ export default function Home() {
       <section id="contact" className="py-20 px-4 bg-white">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
               Ready to Start? 🎯
             </h2>
             <p className="text-xl text-gray-600">
@@ -249,8 +249,8 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 mb-12">
-            <div className="bg-gradient-to-br from-orange-100 to-orange-50 p-6 rounded-2xl text-center">
-              <Mail className="w-8 h-8 text-orange-500 mx-auto mb-3" />
+            <div className="bg-gradient-to-br from-blue-100 to-blue-50 p-6 rounded-2xl text-center">
+              <Mail className="w-8 h-8 text-blue-500 mx-auto mb-3" />
               <p className="font-bold text-gray-800 mb-1">Email Us</p>
               <p className="text-sm text-gray-600">hello@turned-e.ca</p>
             </div>
@@ -266,7 +266,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-orange-500 to-red-500 rounded-3xl p-12 text-center text-white shadow-2xl">
+          <div className="bg-gradient-to-br from-blue-600 to-cyan-500 rounded-3xl p-12 text-center text-white shadow-2xl">
             <h3 className="text-3xl font-bold mb-4">
               🎊 Special Offer: First Class FREE!
             </h3>
@@ -274,7 +274,7 @@ export default function Home() {
               Try any program for free and see why kids can't stop talking about
               us!
             </p>
-            <button className="bg-white text-orange-600 px-10 py-4 rounded-full font-bold text-lg hover:scale-105 transform transition-all shadow-lg">
+            <button className="bg-white text-blue-600 px-10 py-4 rounded-full font-bold text-lg hover:scale-105 transform transition-all shadow-lg">
               Claim Your Free Class
             </button>
           </div>
@@ -284,7 +284,7 @@ export default function Home() {
       <footer className="bg-gray-900 text-white py-12 px-4">
         <div className="container mx-auto text-center">
           <div className="flex items-center justify-center space-x-2 mb-4">
-            <Rocket className="w-8 h-8 text-orange-500" />
+            <Rocket className="w-8 h-8 text-blue-500" />
             <span className="text-2xl font-bold">turned-e! academy</span>
           </div>
           <p className="text-gray-400 mb-4">
