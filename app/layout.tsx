@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Bebas_Neue, Space_Grotesk } from "next/font/google";
+import { I18nProvider } from "./components/I18nProvider";
 import SiteHeader from "./components/SiteHeader";
 import "./globals.css";
 
@@ -27,9 +28,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${bebasNeue.variable} ${spaceGrotesk.variable}`}>
-        <SiteHeader />
-        {children}
+      <body
+        suppressHydrationWarning
+        className={`${bebasNeue.variable} ${spaceGrotesk.variable}`}
+      >
+        <I18nProvider>
+          <SiteHeader />
+          {children}
+        </I18nProvider>
       </body>
     </html>
   );
