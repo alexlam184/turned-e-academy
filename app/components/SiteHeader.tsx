@@ -13,21 +13,34 @@ import {
   BookA,
 } from "lucide-react";
 import { useState } from "react";
+import { useI18n } from "./I18nProvider";
+import type { Locale } from "../i18n/translations";
 
 /* eslint-disable @next/next/no-html-link-for-pages */
 export default function SiteHeader() {
+  const { locale, setLocale, t } = useI18n();
   const programsMenu = [
-    { name: "SAT Prep Program", icon: School },
-    { name: "Head Start Learning", icon: Landmark },
-    { name: "Academic Support Program", icon: GraduationCap },
-    { name: "Empowerment Classes", icon: BookA },
-    { name: "Robotics", icon: Rocket },
-    { name: "AI & Machine Learning", icon: Cpu },
-    { name: "PCB Design", icon: Zap },
+    { label: t("program.sat"), slug: "sat-prep-program", icon: School },
+    { label: t("program.headStart"), slug: "head-start-learning", icon: Landmark },
+    {
+      label: t("program.academicSupport"),
+      slug: "academic-support-program",
+      icon: GraduationCap,
+    },
+    { label: t("program.empowerment"), slug: "empowerment-classes", icon: BookA },
+    { label: t("program.robotics"), slug: "robotics", icon: Rocket },
+    { label: t("program.ai"), slug: "ai-machine-learning", icon: Cpu },
+    { label: t("program.pcb"), slug: "pcb-design", icon: Zap },
   ];
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [programsDropdownOpen, setProgramsDropdownOpen] = useState(false);
+  const localeOptions: { value: Locale; label: string }[] = [
+    { value: "en", label: "EN" },
+    { value: "fr", label: "FR" },
+    { value: "zh-Hant", label: "??" },
+    { value: "zh-Hans", label: "??" },
+  ];
 
   return (
     <>
@@ -47,14 +60,14 @@ export default function SiteHeader() {
               href="#about"
               className="text-gray-700 hover:text-blue-500 transition-colors font-medium"
             >
-              About
+              {t("nav.about")}
             </a>
             <div className="group relative">
               <a
                 href="/programs"
                 className="inline-flex items-center gap-1 text-gray-700 hover:text-blue-500 transition-colors font-medium"
               >
-                Programs
+                {t("nav.programs")}
                 <span className="text-xs">▾</span>
               </a>
               <div className="pointer-events-none invisible absolute left-0 top-full z-20 mt-3 w-64 rounded-2xl border border-blue-100 bg-white p-3 text-sm text-gray-700 opacity-0 shadow-xl transition group-hover:pointer-events-auto group-hover:visible group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:visible group-focus-within:opacity-100">
@@ -62,31 +75,31 @@ export default function SiteHeader() {
                   className="block rounded-xl px-3 py-2 hover:bg-blue-50"
                   href="/programs/sat-prep-program"
                 >
-                  SAT Prep Program
+                  {t("program.sat")}
                 </a>
                 <a
                   className="block rounded-xl px-3 py-2 hover:bg-blue-50"
                   href="/programs/head-start-learning"
                 >
-                  Head Start Learning
+                  {t("program.headStart")}
                 </a>
                 <a
                   className="block rounded-xl px-3 py-2 hover:bg-blue-50"
                   href="/programs/academic-support-program"
                 >
-                  Academic Support Program
+                  {t("program.academicSupport")}
                 </a>
                 <a
                   className="block rounded-xl px-3 py-2 hover:bg-blue-50"
                   href="/programs/academic-program-online"
                 >
-                  Academic Program (Online)
+                  {t("program.academicOnline")}
                 </a>
                 <a
                   className="block rounded-xl px-3 py-2 hover:bg-blue-50"
                   href="/programs/empowerment-classes"
                 >
-                  Empowerment Classes
+                  {t("program.empowerment")}
                 </a>
               </div>
             </div>
@@ -94,18 +107,32 @@ export default function SiteHeader() {
               href="/camp"
               className="text-gray-700 hover:text-blue-500 transition-colors font-medium"
             >
-              Camp
+              {t("nav.camp")}
             </a>
             <a
               href="/blog"
               className="text-gray-700 hover:text-blue-500 transition-colors font-medium"
             >
-              Blog
+              {t("nav.blog")}
             </a>
           </div>
-          <button className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-2 rounded-full font-semibold hover:scale-105 transform transition-all shadow-lg hover:shadow-xl">
-            Enroll Now
-          </button>
+          <div className="hidden md:flex items-center gap-3">
+            <select
+              aria-label="Select language"
+              value={locale}
+              onChange={(event) => setLocale(event.target.value as Locale)}
+              className="rounded-full border border-blue-200 bg-white px-3 py-1.5 text-sm font-semibold text-blue-700 shadow-sm hover:border-blue-300 focus:outline-none"
+            >
+              {localeOptions.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+            <button className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-2 rounded-full font-semibold hover:scale-105 transform transition-all shadow-lg hover:shadow-xl">
+              {t("nav.enroll")}
+            </button>
+          </div>
         </nav>
       </header>
       <header className="fixed top-0 w-full bg-white/90 backdrop-blur-sm shadow-md z-50 transition-all">
@@ -125,21 +152,21 @@ export default function SiteHeader() {
               href="#about"
               className="text-gray-700 hover:text-blue-500 transition-colors font-medium"
             >
-              About
+              {t("nav.about")}
             </a>
             <div className="relative group">
               <button className="text-gray-700 hover:text-blue-500 transition-colors font-medium flex items-center space-x-1">
-                <span>Programs</span>
+                <span>{t("nav.programs")}</span>
                 <ChevronDown className="w-4 h-4" />
               </button>
               <div className="absolute left-0 mt-0 w-48 bg-white rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                 {programsMenu.map((item, idx) => (
                   <a
                     key={idx}
-                    href={`#${item.name.toLowerCase().replace(/\s+/g, "-")}`}
+                    href={`#${item.slug}`}
                     className="block px-4 py-3 text-gray-700 hover:text-blue-500 hover:bg-blue-50 transition-all first:rounded-t-xl last:rounded-b-xl"
                   >
-                    {item.name}
+                    {item.label}
                   </a>
                 ))}
               </div>
@@ -148,7 +175,7 @@ export default function SiteHeader() {
               href="#camp"
               className="text-gray-700 hover:text-blue-500 transition-colors font-medium"
             >
-              Camp
+              {t("nav.camp")}
             </a>
             <a
               href="#faq"
@@ -160,19 +187,31 @@ export default function SiteHeader() {
               href="#blog"
               className="text-gray-700 hover:text-blue-500 transition-colors font-medium"
             >
-              Blog
+              {t("nav.blog")}
             </a>
             <a
               href="#contact"
               className="text-gray-700 hover:text-blue-500 transition-colors font-medium"
             >
-              Contact
+              {t("nav.contact")}
             </a>
           </div>
 
-          <div className="hidden md:block">
+          <div className="hidden md:flex items-center gap-3">
+            <select
+              aria-label="Select language"
+              value={locale}
+              onChange={(event) => setLocale(event.target.value as Locale)}
+              className="rounded-full border border-blue-200 bg-white px-3 py-1.5 text-sm font-semibold text-blue-700 shadow-sm hover:border-blue-300 focus:outline-none"
+            >
+              {localeOptions.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
             <button className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-2 rounded-full font-semibold hover:scale-105 transform transition-all shadow-lg hover:shadow-xl">
-              Enroll Now
+              {t("nav.enroll")}
             </button>
           </div>
 
@@ -196,14 +235,14 @@ export default function SiteHeader() {
                 onClick={() => setMobileMenuOpen(false)}
                 className="block text-gray-700 hover:text-blue-500 transition-colors font-medium py-2"
               >
-                About
+                {t("nav.about")}
               </a>
               <div>
                 <button
                   onClick={() => setProgramsDropdownOpen(!programsDropdownOpen)}
                   className="w-full text-left text-gray-700 hover:text-blue-500 transition-colors font-medium py-2 flex items-center justify-between"
                 >
-                  <span>Programs</span>
+                  <span>{t("nav.programs")}</span>
                   <ChevronDown
                     className={`w-4 h-4 transform transition-transform ${
                       programsDropdownOpen ? "rotate-180" : ""
@@ -215,16 +254,14 @@ export default function SiteHeader() {
                     {programsMenu.map((item, idx) => (
                       <a
                         key={idx}
-                        href={`#${item.name
-                          .toLowerCase()
-                          .replace(/\s+/g, "-")}`}
+                        href={`#${item.slug}`}
                         onClick={() => {
                           setMobileMenuOpen(false);
                           setProgramsDropdownOpen(false);
                         }}
                         className="block text-gray-600 hover:text-blue-500 transition-colors py-2"
                       >
-                        {item.name}
+                        {item.label}
                       </a>
                     ))}
                   </div>
@@ -235,31 +272,48 @@ export default function SiteHeader() {
                 onClick={() => setMobileMenuOpen(false)}
                 className="block text-gray-700 hover:text-blue-500 transition-colors font-medium py-2"
               >
-                Camp
+                {t("nav.camp")}
               </a>
               <a
                 href="#faq"
                 onClick={() => setMobileMenuOpen(false)}
                 className="block text-gray-700 hover:text-blue-500 transition-colors font-medium py-2"
               >
-                FAQ
+                {t("nav.faq")}
               </a>
               <a
                 href="#blog"
                 onClick={() => setMobileMenuOpen(false)}
                 className="block text-gray-700 hover:text-blue-500 transition-colors font-medium py-2"
               >
-                Blog
+                {t("nav.blog")}
               </a>
               <a
                 href="#contact"
                 onClick={() => setMobileMenuOpen(false)}
                 className="block text-gray-700 hover:text-blue-500 transition-colors font-medium py-2"
               >
-                Contact
+                {t("nav.contact")}
               </a>
+              <div className="flex items-center gap-3">
+                <label className="text-sm font-semibold text-gray-600">
+                  Language
+                </label>
+                <select
+                  aria-label="Select language"
+                  value={locale}
+                  onChange={(event) => setLocale(event.target.value as Locale)}
+                  className="rounded-full border border-blue-200 bg-white px-3 py-1.5 text-sm font-semibold text-blue-700 shadow-sm hover:border-blue-300 focus:outline-none"
+                >
+                  {localeOptions.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
               <button className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-2 rounded-full font-semibold hover:scale-105 transform transition-all shadow-lg mt-4">
-                Enroll Now
+                {t("nav.enroll")}
               </button>
             </div>
           </div>

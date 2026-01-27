@@ -15,9 +15,11 @@ import {
   Sparkles,
 } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useI18n } from "./components/I18nProvider";
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
+  const { t } = useI18n();
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -32,21 +34,19 @@ export default function Home() {
             <div className="space-y-6 animate-fade-in">
               <h1 className="text-5xl md:text-6xl font-bold leading-tight">
                 <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-indigo-600 bg-clip-text text-transparent">
-                  Learn, Play, Create!
+                  {t("hero.title")}
                 </span>
               </h1>
               <p className="text-xl text-white leading-relaxed">
-                🍁 Canada's most exciting STEM education adventure! Join
-                turned-e! academy where science meets fun, and every student
-                becomes a future innovator!
+                {t("hero.subtitle")}
               </p>
               <div className="flex flex-wrap gap-4">
                 <button className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:scale-105 transform transition-all shadow-lg hover:shadow-2xl flex items-center space-x-2">
-                  <span>Start Your Journey</span>
+                  <span>{t("hero.cta.primary")}</span>
                   <ChevronRight className="w-5 h-5" />
                 </button>
                 <button className="bg-white text-blue-600 px-8 py-4 rounded-full font-bold text-lg hover:scale-105 transform transition-all shadow-lg hover:shadow-2xl border-2 border-blue-500">
-                  Watch Video
+                  {t("hero.cta.secondary")}
                 </button>
               </div>
             </div>
@@ -58,19 +58,27 @@ export default function Home() {
                     <div className="grid grid-cols-2 gap-4">
                       <div className="bg-blue-100 p-6 rounded-xl text-center hover:scale-110 transition-transform cursor-pointer floating-delayed">
                         <Beaker className="w-12 h-12 text-blue-500 mx-auto mb-2" />
-                        <p className="font-bold text-blue-700">Science</p>
+                        <p className="font-bold text-blue-700">
+                          {t("hero.card.science")}
+                        </p>
                       </div>
                       <div className="bg-green-100 p-6 rounded-xl text-center hover:scale-110 transition-transform cursor-pointer floating">
                         <Cpu className="w-12 h-12 text-green-500 mx-auto mb-2" />
-                        <p className="font-bold text-green-700">Tech</p>
+                        <p className="font-bold text-green-700">
+                          {t("hero.card.tech")}
+                        </p>
                       </div>
                       <div className="bg-blue-100 p-6 rounded-xl text-center hover:scale-110 transition-transform cursor-pointer floating-delayed">
                         <Code className="w-12 h-12 text-blue-500 mx-auto mb-2" />
-                        <p className="font-bold text-blue-700">Engineering</p>
+                        <p className="font-bold text-blue-700">
+                          {t("hero.card.engineering")}
+                        </p>
                       </div>
                       <div className="bg-red-100 p-6 rounded-xl text-center hover:scale-110 transition-transform cursor-pointer floating">
                         <Zap className="w-12 h-12 text-red-500 mx-auto mb-2" />
-                        <p className="font-bold text-red-700">Math</p>
+                        <p className="font-bold text-red-700">
+                          {t("hero.card.math")}
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -85,11 +93,10 @@ export default function Home() {
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
-              What Makes Us Special? 🌟
+              {t("about.title")}
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              We're not just another education company - we're a launchpad for
-              young minds!
+              {t("about.subtitle")}
             </p>
           </div>
 
@@ -99,11 +106,10 @@ export default function Home() {
                 <Sparkles className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-2xl font-bold mb-3 text-blue-700">
-                Fun-First Learning
+                {t("about.feature.fun.title")}
               </h3>
               <p className="text-gray-700">
-                Who says learning can't be hilarious? We mix education with
-                games, jokes, and lots of "aha!" moments!
+                {t("about.feature.fun.body")}
               </p>
             </div>
 
@@ -115,11 +121,10 @@ export default function Home() {
                 <Users className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-2xl font-bold mb-3 text-blue-700">
-                Expert Instructors
+                {t("about.feature.expert.title")}
               </h3>
               <p className="text-gray-700">
-                Our teachers are like superheroes - with PhDs! They make rocket
-                science feel like a playground adventure.
+                {t("about.feature.expert.body")}
               </p>
             </div>
 
@@ -131,11 +136,10 @@ export default function Home() {
                 <Star className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-2xl font-bold mb-3 text-green-700">
-                Hands-On Projects
+                {t("about.feature.projects.title")}
               </h3>
               <p className="text-gray-700">
-                Build robots, code games, launch rockets! You'll create things
-                so cool, your friends will be jealous.
+                {t("about.feature.projects.body")}
               </p>
             </div>
           </div>
@@ -149,10 +153,10 @@ export default function Home() {
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
-              Amazing Programs 🚀
+              {t("programs.title")}
             </h2>
             <p className="text-xl text-gray-600">
-              Choose your adventure in the world of STEM!
+              {t("programs.subtitle")}
             </p>
           </div>
 
@@ -162,10 +166,10 @@ export default function Home() {
                 <Rocket className="w-10 h-10 text-white" />
               </div>
               <h3 className="text-xl font-bold text-center mb-2 text-gray-800">
-                Robotics
+                {t("programs.card.robotics.title")}
               </h3>
               <p className="text-gray-600 text-center text-sm">
-                Build and program awesome robots that actually move!
+                {t("programs.card.robotics.body")}
               </p>
             </div>
 
@@ -174,10 +178,10 @@ export default function Home() {
                 <Code className="w-10 h-10 text-white" />
               </div>
               <h3 className="text-xl font-bold text-center mb-2 text-gray-800">
-                Coding
+                {t("programs.card.coding.title")}
               </h3>
               <p className="text-gray-600 text-center text-sm">
-                Create games, apps, and websites like a pro developer!
+                {t("programs.card.coding.body")}
               </p>
             </div>
 
@@ -186,10 +190,10 @@ export default function Home() {
                 <Beaker className="w-10 h-10 text-white" />
               </div>
               <h3 className="text-xl font-bold text-center mb-2 text-gray-800">
-                Science Labs
+                {t("programs.card.science.title")}
               </h3>
               <p className="text-gray-600 text-center text-sm">
-                Explode, fizz, and discover the magic of science!
+                {t("programs.card.science.body")}
               </p>
             </div>
 
@@ -198,10 +202,10 @@ export default function Home() {
                 <Zap className="w-10 h-10 text-white" />
               </div>
               <h3 className="text-xl font-bold text-center mb-2 text-gray-800">
-                Math Masters
+                {t("programs.card.math.title")}
               </h3>
               <p className="text-gray-600 text-center text-sm">
-                Crack codes and solve puzzles that'll blow your mind!
+                {t("programs.card.math.body")}
               </p>
             </div>
           </div>
@@ -214,24 +218,24 @@ export default function Home() {
       >
         <div className="container mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-8">
-            Join 10,000+ Happy Learners! 🎉
+            {t("why.title")}
           </h2>
           <div className="grid md:grid-cols-4 gap-8 max-w-4xl mx-auto">
             <div className="bg-white/20 backdrop-blur-lg rounded-2xl p-6 hover:bg-white/30 transition-all">
               <p className="text-5xl font-bold mb-2">98%</p>
-              <p className="text-lg">Satisfaction Rate</p>
+              <p className="text-lg">{t("why.stat.satisfaction")}</p>
             </div>
             <div className="bg-white/20 backdrop-blur-lg rounded-2xl p-6 hover:bg-white/30 transition-all">
               <p className="text-5xl font-bold mb-2">50+</p>
-              <p className="text-lg">Expert Teachers</p>
+              <p className="text-lg">{t("why.stat.teachers")}</p>
             </div>
             <div className="bg-white/20 backdrop-blur-lg rounded-2xl p-6 hover:bg-white/30 transition-all">
               <p className="text-5xl font-bold mb-2">100+</p>
-              <p className="text-lg">Fun Courses</p>
+              <p className="text-lg">{t("why.stat.courses")}</p>
             </div>
             <div className="bg-white/20 backdrop-blur-lg rounded-2xl p-6 hover:bg-white/30 transition-all">
               <p className="text-5xl font-bold mb-2">15+</p>
-              <p className="text-lg">Years Experience</p>
+              <p className="text-lg">{t("why.stat.years")}</p>
             </div>
           </div>
         </div>
@@ -241,41 +245,40 @@ export default function Home() {
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
-              Ready to Start? 🎯
+              {t("contact.title")}
             </h2>
             <p className="text-xl text-gray-600">
-              Let's make learning the best part of your day!
+              {t("contact.subtitle")}
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 mb-12">
             <div className="bg-gradient-to-br from-blue-100 to-blue-50 p-6 rounded-2xl text-center">
               <Mail className="w-8 h-8 text-blue-500 mx-auto mb-3" />
-              <p className="font-bold text-gray-800 mb-1">Email Us</p>
+              <p className="font-bold text-gray-800 mb-1">{t("contact.card.email")}</p>
               <p className="text-sm text-gray-600">hello@turned-e.ca</p>
             </div>
             <div className="bg-gradient-to-br from-blue-100 to-blue-50 p-6 rounded-2xl text-center">
               <Phone className="w-8 h-8 text-blue-500 mx-auto mb-3" />
-              <p className="font-bold text-gray-800 mb-1">Call Us</p>
+              <p className="font-bold text-gray-800 mb-1">{t("contact.card.call")}</p>
               <p className="text-sm text-gray-600">1-800-STEM-FUN</p>
             </div>
             <div className="bg-gradient-to-br from-green-100 to-green-50 p-6 rounded-2xl text-center">
               <MapPin className="w-8 h-8 text-green-500 mx-auto mb-3" />
-              <p className="font-bold text-gray-800 mb-1">Visit Us</p>
-              <p className="text-sm text-gray-600">Toronto, Canada 🍁</p>
+              <p className="font-bold text-gray-800 mb-1">{t("contact.card.visit")}</p>
+              <p className="text-sm text-gray-600">{t("contact.card.location")}</p>
             </div>
           </div>
 
           <div className="bg-gradient-to-br from-blue-600 to-cyan-500 rounded-3xl p-12 text-center text-white shadow-2xl">
             <h3 className="text-3xl font-bold mb-4">
-              🎊 Special Offer: First Class FREE!
+              {t("contact.offer.title")}
             </h3>
             <p className="text-lg mb-6">
-              Try any program for free and see why kids can't stop talking about
-              us!
+              {t("contact.offer.body")}
             </p>
             <button className="bg-white text-blue-600 px-10 py-4 rounded-full font-bold text-lg hover:scale-105 transform transition-all shadow-lg">
-              Claim Your Free Class
+              {t("contact.offer.cta")}
             </button>
           </div>
         </div>
@@ -288,11 +291,10 @@ export default function Home() {
             <span className="text-2xl font-bold">turned-e! academy</span>
           </div>
           <p className="text-gray-400 mb-4">
-            Inspiring the next generation of innovators across Canada 🍁
+            {t("footer.tagline")}
           </p>
           <p className="text-sm text-gray-500">
-            © 2024 turned-e! academy. All rights reserved. | Made with ❤️ and
-            lots of code
+            {t("footer.legal")}
           </p>
         </div>
       </footer>
