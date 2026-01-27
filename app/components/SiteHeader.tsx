@@ -38,15 +38,15 @@ export default function SiteHeader() {
   const localeOptions: { value: Locale; label: string }[] = [
     { value: "en", label: "EN" },
     { value: "fr", label: "FR" },
-    { value: "zh-Hant", label: "??" },
-    { value: "zh-Hans", label: "??" },
+    { value: "zh-Hant", label: "繁體中文" },
+    { value: "zh-Hans", label: "简体中文" },
   ];
 
   return (
     <>
       <header className="fixed top-0 w-full bg-white/90 backdrop-blur-sm shadow-md z-50 transition-all">
         <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="flex items-center space-x-2">
+          <a href="/" className="flex items-center space-x-2">
             <div className="relative">
               <Rocket className="w-8 h-8 text-blue-500 animate-bounce" />
               <Sparkles className="w-4 h-4 text-yellow-500 absolute -top-1 -right-1 animate-pulse" />
@@ -54,10 +54,10 @@ export default function SiteHeader() {
             <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
               turned-e! academy
             </span>
-          </div>
+          </a>
           <div className="hidden md:flex items-center space-x-6">
             <a
-              href="#about"
+              href="about"
               className="text-gray-700 hover:text-blue-500 transition-colors font-medium"
             >
               {t("nav.about")}
@@ -137,7 +137,7 @@ export default function SiteHeader() {
       </header>
       <header className="fixed top-0 w-full bg-white/90 backdrop-blur-sm shadow-md z-50 transition-all">
         <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="flex items-center space-x-2">
+          <a href="/" className="flex items-center space-x-2">
             <div className="relative">
               <Rocket className="w-8 h-8 text-blue-500 animate-bounce" />
               <Sparkles className="w-4 h-4 text-yellow-500 absolute -top-1 -right-1 animate-pulse" />
@@ -145,11 +145,11 @@ export default function SiteHeader() {
             <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
               turned-e! academy
             </span>
-          </div>
+          </a>
 
           <div className="hidden md:flex space-x-6 items-center">
             <a
-              href="#about"
+              href="about"
               className="text-gray-700 hover:text-blue-500 transition-colors font-medium"
             >
               {t("nav.about")}
@@ -163,7 +163,7 @@ export default function SiteHeader() {
                 {programsMenu.map((item, idx) => (
                   <a
                     key={idx}
-                    href={`#${item.slug}`}
+                    href={`${item.slug}`}
                     className="block px-4 py-3 text-gray-700 hover:text-blue-500 hover:bg-blue-50 transition-all first:rounded-t-xl last:rounded-b-xl"
                   >
                     {item.label}
@@ -172,25 +172,25 @@ export default function SiteHeader() {
               </div>
             </div>
             <a
-              href="#camp"
+              href="camp"
               className="text-gray-700 hover:text-blue-500 transition-colors font-medium"
             >
               {t("nav.camp")}
             </a>
             <a
-              href="#faq"
+              href="faq"
               className="text-gray-700 hover:text-blue-500 transition-colors font-medium"
             >
               FAQ
             </a>
             <a
-              href="#blog"
+              href="blog"
               className="text-gray-700 hover:text-blue-500 transition-colors font-medium"
             >
               {t("nav.blog")}
             </a>
             <a
-              href="#contact"
+              href="contact"
               className="text-gray-700 hover:text-blue-500 transition-colors font-medium"
             >
               {t("nav.contact")}
@@ -231,7 +231,7 @@ export default function SiteHeader() {
           <div className="md:hidden bg-white border-t border-gray-200">
             <div className="container mx-auto px-4 py-4 space-y-3">
               <a
-                href="#about"
+                href="about"
                 onClick={() => setMobileMenuOpen(false)}
                 className="block text-gray-700 hover:text-blue-500 transition-colors font-medium py-2"
               >
@@ -254,7 +254,7 @@ export default function SiteHeader() {
                     {programsMenu.map((item, idx) => (
                       <a
                         key={idx}
-                        href={`#${item.slug}`}
+                        href={`${item.slug}`}
                         onClick={() => {
                           setMobileMenuOpen(false);
                           setProgramsDropdownOpen(false);
@@ -268,28 +268,28 @@ export default function SiteHeader() {
                 )}
               </div>
               <a
-                href="#camp"
+                href="camp"
                 onClick={() => setMobileMenuOpen(false)}
                 className="block text-gray-700 hover:text-blue-500 transition-colors font-medium py-2"
               >
                 {t("nav.camp")}
               </a>
               <a
-                href="#faq"
+                href="faq"
                 onClick={() => setMobileMenuOpen(false)}
                 className="block text-gray-700 hover:text-blue-500 transition-colors font-medium py-2"
               >
                 {t("nav.faq")}
               </a>
               <a
-                href="#blog"
+                href="blog"
                 onClick={() => setMobileMenuOpen(false)}
                 className="block text-gray-700 hover:text-blue-500 transition-colors font-medium py-2"
               >
                 {t("nav.blog")}
               </a>
               <a
-                href="#contact"
+                href="contact"
                 onClick={() => setMobileMenuOpen(false)}
                 className="block text-gray-700 hover:text-blue-500 transition-colors font-medium py-2"
               >

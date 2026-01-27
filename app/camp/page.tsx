@@ -1,4 +1,9 @@
+"use client";
+
+import { useI18n } from "../components/I18nProvider";
+
 export default function CampPage() {
+  const { t } = useI18n();
   return (
     <div className="min-h-screen bg-hero text-[color:var(--ink)]">
       <main>
@@ -6,53 +11,59 @@ export default function CampPage() {
           <div className="mx-auto grid w-full max-w-6xl gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             <div>
               <div className="inline-flex items-center gap-2 rounded-full bg-black/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.26em] text-black/60">
-                Camp season 2026
+                {t("camp.hero.season")}
               </div>
               <h1 className="mt-6 font-display text-5xl uppercase leading-none text-black sm:text-6xl lg:text-7xl">
-                STEM camps that feel like missions.
-                <span className="block text-[color:var(--ember)]">Launch bold ideas.</span>
+                {t("camp.hero.title")}
+                <span className="block text-[color:var(--ember)]">
+                  {t("camp.hero.titleEmphasis")}
+                </span>
               </h1>
               <p className="mt-6 max-w-xl text-lg text-black/70">
-                Turned-E Academy camps turn school breaks into immersive build labs.
-                Students collaborate on real projects in coding, robotics, and STEM
-                design with mentor support.
+                {t("camp.hero.subtitle")}
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <button className="rounded-full bg-[color:var(--ember)] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-red-500/30 transition hover:-translate-y-0.5 hover:bg-[#c53827]">
-                  Reserve a Camp Seat
+                  {t("camp.hero.cta.primary")}
                 </button>
                 <button className="rounded-full border border-black/20 px-6 py-3 text-sm font-semibold text-black transition hover:border-black/40">
-                  Download Camp Guide
+                  {t("camp.hero.cta.secondary")}
                 </button>
               </div>
             </div>
             <div className="glass relative overflow-hidden rounded-[32px] p-8">
               <p className="text-xs uppercase tracking-[0.3em] text-black/50">
-                Camp day flow
+                {t("camp.dayFlow.label")}
               </p>
               <h2 className="mt-4 font-display text-4xl uppercase text-black">
-                Build. Test. Showcase.
+                {t("camp.dayFlow.title")}
               </h2>
               <div className="mt-6 space-y-4 text-sm text-black/70">
                 <div className="rounded-2xl bg-black/5 p-4">
-                  <p className="font-semibold text-black">9:00 - 10:30</p>
-                  <p>Team briefing and concept design.</p>
+                  <p className="font-semibold text-black">
+                    {t("camp.dayFlow.slot1.time")}
+                  </p>
+                  <p>{t("camp.dayFlow.slot1.body")}</p>
                 </div>
                 <div className="rounded-2xl bg-black/5 p-4">
-                  <p className="font-semibold text-black">10:45 - 12:30</p>
-                  <p>Build sprint with mentors and prototyping.</p>
+                  <p className="font-semibold text-black">
+                    {t("camp.dayFlow.slot2.time")}
+                  </p>
+                  <p>{t("camp.dayFlow.slot2.body")}</p>
                 </div>
                 <div className="rounded-2xl bg-black/5 p-4">
-                  <p className="font-semibold text-black">1:15 - 3:00</p>
-                  <p>Code lab, testing, and demo prep.</p>
+                  <p className="font-semibold text-black">
+                    {t("camp.dayFlow.slot3.time")}
+                  </p>
+                  <p>{t("camp.dayFlow.slot3.body")}</p>
                 </div>
               </div>
               <div className="mt-6 flex items-center justify-between">
                 <p className="text-xs uppercase tracking-[0.24em] text-black/50">
-                  Weekly demo night
+                  {t("camp.dayFlow.footer.label")}
                 </p>
                 <button className="rounded-full bg-black px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-white">
-                  See projects
+                  {t("camp.dayFlow.footer.cta")}
                 </button>
               </div>
             </div>
@@ -62,13 +73,13 @@ export default function CampPage() {
         <section className="bg-[color:var(--night)] px-6 py-10 text-white lg:px-10">
           <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
             <p className="font-display text-3xl uppercase tracking-wide">
-              Camps built for ages 7-17.
+              {t("camp.banner.title")}
             </p>
             <div className="flex flex-wrap gap-6 text-sm text-white/70">
-              <span>Full day camps</span>
-              <span>Weekly intensives</span>
-              <span>Teen innovation labs</span>
-              <span>Mobile camp teams</span>
+              <span>{t("camp.banner.tag1")}</span>
+              <span>{t("camp.banner.tag2")}</span>
+              <span>{t("camp.banner.tag3")}</span>
+              <span>{t("camp.banner.tag4")}</span>
             </div>
           </div>
         </section>
@@ -78,15 +89,14 @@ export default function CampPage() {
             <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
               <div>
                 <p className="text-xs uppercase tracking-[0.3em] text-black/50">
-                  Camp formats
+                  {t("camp.formats.label")}
                 </p>
                 <h2 className="mt-3 font-display text-4xl uppercase text-black">
-                  Pick the experience that fits your family.
+                  {t("camp.formats.title")}
                 </h2>
               </div>
               <p className="max-w-md text-sm text-black/60">
-                Every camp includes team projects, mentor check-ins, and a showcase
-                to celebrate student progress.
+                {t("camp.formats.subtitle")}
               </p>
             </div>
             <div className="mt-10 grid gap-6 lg:grid-cols-3">
@@ -95,13 +105,13 @@ export default function CampPage() {
                   D
                 </div>
                 <h3 className="mt-6 font-display text-3xl uppercase text-black">
-                  Day Camps
+                  {t("camp.formats.card.day.title")}
                 </h3>
                 <p className="mt-3 text-sm text-black/60">
-                  Weekly themes with robotics, coding, and science labs.
+                  {t("camp.formats.card.day.body")}
                 </p>
                 <p className="mt-6 text-xs uppercase tracking-[0.24em] text-black/50">
-                  Ages 7-12
+                  {t("camp.formats.card.day.ages")}
                 </p>
               </div>
               <div className="rounded-3xl border border-black/10 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
@@ -109,13 +119,13 @@ export default function CampPage() {
                   W
                 </div>
                 <h3 className="mt-6 font-display text-3xl uppercase text-black">
-                  Week Intensives
+                  {t("camp.formats.card.week.title")}
                 </h3>
                 <p className="mt-3 text-sm text-black/60">
-                  Deep dives into game dev, AI, and engineering builds.
+                  {t("camp.formats.card.week.body")}
                 </p>
                 <p className="mt-6 text-xs uppercase tracking-[0.24em] text-black/50">
-                  Ages 9-15
+                  {t("camp.formats.card.week.ages")}
                 </p>
               </div>
               <div className="rounded-3xl border border-black/10 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
@@ -123,13 +133,13 @@ export default function CampPage() {
                   T
                 </div>
                 <h3 className="mt-6 font-display text-3xl uppercase text-black">
-                  Teen Labs
+                  {t("camp.formats.card.teen.title")}
                 </h3>
                 <p className="mt-3 text-sm text-black/60">
-                  Portfolio projects, leadership roles, and demo coaching.
+                  {t("camp.formats.card.teen.body")}
                 </p>
                 <p className="mt-6 text-xs uppercase tracking-[0.24em] text-black/50">
-                  Ages 13-17
+                  {t("camp.formats.card.teen.ages")}
                 </p>
               </div>
             </div>
@@ -141,21 +151,21 @@ export default function CampPage() {
             <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
               <div>
                 <p className="text-xs uppercase tracking-[0.3em] text-black/60">
-                  Camp enrollment
+                  {t("camp.enroll.label")}
                 </p>
                 <h2 className="mt-3 font-display text-4xl uppercase">
-                  Save your spot for summer or winter break.
+                  {t("camp.enroll.title")}
                 </h2>
                 <p className="mt-4 text-sm text-black/70">
-                  We accept rolling registrations until each camp is full.
+                  {t("camp.enroll.subtitle")}
                 </p>
               </div>
               <div className="flex flex-col gap-4">
                 <button className="rounded-full bg-black px-6 py-3 text-sm font-semibold text-white">
-                  Register Now
+                  {t("camp.enroll.cta.primary")}
                 </button>
                 <button className="rounded-full border border-black/30 px-6 py-3 text-sm font-semibold text-black">
-                  Talk to a Camp Advisor
+                  {t("camp.enroll.cta.secondary")}
                 </button>
               </div>
             </div>

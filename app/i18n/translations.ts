@@ -61,7 +61,45 @@ export type TranslationKey =
   | "contact.offer.body"
   | "contact.offer.cta"
   | "footer.tagline"
-  | "footer.legal";
+  | "footer.legal"
+  | "camp.hero.season"
+  | "camp.hero.title"
+  | "camp.hero.titleEmphasis"
+  | "camp.hero.subtitle"
+  | "camp.hero.cta.primary"
+  | "camp.hero.cta.secondary"
+  | "camp.dayFlow.label"
+  | "camp.dayFlow.title"
+  | "camp.dayFlow.slot1.time"
+  | "camp.dayFlow.slot1.body"
+  | "camp.dayFlow.slot2.time"
+  | "camp.dayFlow.slot2.body"
+  | "camp.dayFlow.slot3.time"
+  | "camp.dayFlow.slot3.body"
+  | "camp.dayFlow.footer.label"
+  | "camp.dayFlow.footer.cta"
+  | "camp.banner.title"
+  | "camp.banner.tag1"
+  | "camp.banner.tag2"
+  | "camp.banner.tag3"
+  | "camp.banner.tag4"
+  | "camp.formats.label"
+  | "camp.formats.title"
+  | "camp.formats.subtitle"
+  | "camp.formats.card.day.title"
+  | "camp.formats.card.day.body"
+  | "camp.formats.card.day.ages"
+  | "camp.formats.card.week.title"
+  | "camp.formats.card.week.body"
+  | "camp.formats.card.week.ages"
+  | "camp.formats.card.teen.title"
+  | "camp.formats.card.teen.body"
+  | "camp.formats.card.teen.ages"
+  | "camp.enroll.label"
+  | "camp.enroll.title"
+  | "camp.enroll.subtitle"
+  | "camp.enroll.cta.primary"
+  | "camp.enroll.cta.secondary";
 
 export const translations: Record<Locale, Record<TranslationKey, string>> = {
   en: {
@@ -134,6 +172,50 @@ export const translations: Record<Locale, Record<TranslationKey, string>> = {
       "Inspiring the next generation of innovators across Canada",
     "footer.legal":
       "2024 turned-e! academy. All rights reserved. | Made with love and lots of code",
+    "camp.hero.season": "Camp season 2026",
+    "camp.hero.title": "STEM camps that feel like missions.",
+    "camp.hero.titleEmphasis": "Launch bold ideas.",
+    "camp.hero.subtitle":
+      "Turned-E Academy camps turn school breaks into immersive build labs. Students collaborate on real projects in coding, robotics, and STEM design with mentor support.",
+    "camp.hero.cta.primary": "Reserve a Camp Seat",
+    "camp.hero.cta.secondary": "Download Camp Guide",
+    "camp.dayFlow.label": "Camp day flow",
+    "camp.dayFlow.title": "Build. Test. Showcase.",
+    "camp.dayFlow.slot1.time": "9:00 - 10:30",
+    "camp.dayFlow.slot1.body": "Team briefing and concept design.",
+    "camp.dayFlow.slot2.time": "10:45 - 12:30",
+    "camp.dayFlow.slot2.body": "Build sprint with mentors and prototyping.",
+    "camp.dayFlow.slot3.time": "1:15 - 3:00",
+    "camp.dayFlow.slot3.body": "Code lab, testing, and demo prep.",
+    "camp.dayFlow.footer.label": "Weekly demo night",
+    "camp.dayFlow.footer.cta": "See projects",
+    "camp.banner.title": "Camps built for ages 7-17.",
+    "camp.banner.tag1": "Full day camps",
+    "camp.banner.tag2": "Weekly intensives",
+    "camp.banner.tag3": "Teen innovation labs",
+    "camp.banner.tag4": "Mobile camp teams",
+    "camp.formats.label": "Camp formats",
+    "camp.formats.title": "Pick the experience that fits your family.",
+    "camp.formats.subtitle":
+      "Every camp includes team projects, mentor check-ins, and a showcase to celebrate student progress.",
+    "camp.formats.card.day.title": "Day Camps",
+    "camp.formats.card.day.body":
+      "Weekly themes with robotics, coding, and science labs.",
+    "camp.formats.card.day.ages": "Ages 7-12",
+    "camp.formats.card.week.title": "Week Intensives",
+    "camp.formats.card.week.body":
+      "Deep dives into game dev, AI, and engineering builds.",
+    "camp.formats.card.week.ages": "Ages 9-15",
+    "camp.formats.card.teen.title": "Teen Labs",
+    "camp.formats.card.teen.body":
+      "Portfolio projects, leadership roles, and demo coaching.",
+    "camp.formats.card.teen.ages": "Ages 13-17",
+    "camp.enroll.label": "Camp enrollment",
+    "camp.enroll.title": "Save your spot for summer or winter break.",
+    "camp.enroll.subtitle":
+      "We accept rolling registrations until each camp is full.",
+    "camp.enroll.cta.primary": "Register Now",
+    "camp.enroll.cta.secondary": "Talk to a Camp Advisor",
   },
   fr: {
     "nav.about": "A propos",
@@ -205,6 +287,49 @@ export const translations: Record<Locale, Record<TranslationKey, string>> = {
       "Inspirer la prochaine generation d'innovateurs au Canada",
     "footer.legal":
       "2024 turned-e! academy. Tous droits reserves. | Fait avec amour et beaucoup de code",
+    "camp.hero.season": "Saison des camps 2026",
+    "camp.hero.title": "Des camps STEM comme des missions.",
+    "camp.hero.titleEmphasis": "Lancez des idees audacieuses.",
+    "camp.hero.subtitle":
+      "Les camps Turned-E Academy transforment les vacances scolaires en ateliers immersifs. Les eleves collaborent sur de vrais projets en code, robotique et conception STEM avec l'appui de mentors.",
+    "camp.hero.cta.primary": "Reserver une place",
+    "camp.hero.cta.secondary": "Telecharger le guide",
+    "camp.dayFlow.label": "Deroule d'une journee",
+    "camp.dayFlow.title": "Construire. Tester. Presenter.",
+    "camp.dayFlow.slot1.time": "9:00 - 10:30",
+    "camp.dayFlow.slot1.body": "Brief d'equipe et conception du concept.",
+    "camp.dayFlow.slot2.time": "10:45 - 12:30",
+    "camp.dayFlow.slot2.body": "Sprint de construction avec mentors et prototypage.",
+    "camp.dayFlow.slot3.time": "1:15 - 3:00",
+    "camp.dayFlow.slot3.body": "Atelier code, tests et preparation demo.",
+    "camp.dayFlow.footer.label": "Soiree demo hebdo",
+    "camp.dayFlow.footer.cta": "Voir les projets",
+    "camp.banner.title": "Des camps pour les 7-17 ans.",
+    "camp.banner.tag1": "Camps a la journee",
+    "camp.banner.tag2": "Intensifs hebdomadaires",
+    "camp.banner.tag3": "Labos d'innovation ados",
+    "camp.banner.tag4": "Equipes mobiles",
+    "camp.formats.label": "Formats de camp",
+    "camp.formats.title": "Choisissez l'experience ideale pour votre famille.",
+    "camp.formats.subtitle":
+      "Chaque camp inclut des projets d'equipe, des bilans mentor et une vitrine pour celebrer les progres.",
+    "camp.formats.card.day.title": "Camps de jour",
+    "camp.formats.card.day.body":
+      "Themes hebdo avec robotique, code et labos de science.",
+    "camp.formats.card.day.ages": "Ages 7-12",
+    "camp.formats.card.week.title": "Intensifs de semaine",
+    "camp.formats.card.week.body":
+      "Immersions dans dev de jeux, IA et constructions d'ingenierie.",
+    "camp.formats.card.week.ages": "Ages 9-15",
+    "camp.formats.card.teen.title": "Labos ados",
+    "camp.formats.card.teen.body":
+      "Projets portfolio, roles de leadership et coaching de demo.",
+    "camp.formats.card.teen.ages": "Ages 13-17",
+    "camp.enroll.label": "Inscriptions camp",
+    "camp.enroll.title": "Gardez votre place pour l'ete ou l'hiver.",
+    "camp.enroll.subtitle": "Inscriptions en continu jusqu'au complet.",
+    "camp.enroll.cta.primary": "S'inscrire",
+    "camp.enroll.cta.secondary": "Parler a un conseiller camp",
   },
   "zh-Hant": {
     "nav.about": "關於我們",
@@ -268,6 +393,46 @@ export const translations: Record<Locale, Record<TranslationKey, string>> = {
     "contact.offer.cta": "領取免費課程",
     "footer.tagline": "啟發加拿大下一代的創新者",
     "footer.legal": "2024 turned-e! academy. 保留所有權利。| 用愛與程式打造",
+    "camp.hero.season": "2026 營隊季",
+    "camp.hero.title": "像任務一樣的 STEM 營隊。",
+    "camp.hero.titleEmphasis": "點燃大膽想法。",
+    "camp.hero.subtitle":
+      "Turned-E Academy 營隊把假期變成沉浸式建造實驗室。學生在導師陪伴下合作完成程式、機器人與 STEM 設計專案。",
+    "camp.hero.cta.primary": "預留營隊名額",
+    "camp.hero.cta.secondary": "下載營隊指南",
+    "camp.dayFlow.label": "營隊日流程",
+    "camp.dayFlow.title": "打造。測試。展示。",
+    "camp.dayFlow.slot1.time": "9:00 - 10:30",
+    "camp.dayFlow.slot1.body": "團隊簡報與概念設計。",
+    "camp.dayFlow.slot2.time": "10:45 - 12:30",
+    "camp.dayFlow.slot2.body": "與導師進行製作衝刺與原型測試。",
+    "camp.dayFlow.slot3.time": "1:15 - 3:00",
+    "camp.dayFlow.slot3.body": "程式實驗室、測試與展示準備。",
+    "camp.dayFlow.footer.label": "每週成果夜",
+    "camp.dayFlow.footer.cta": "查看作品",
+    "camp.banner.title": "適合 7-17 歲的營隊。",
+    "camp.banner.tag1": "全日營隊",
+    "camp.banner.tag2": "每週密集",
+    "camp.banner.tag3": "青少年創新實驗室",
+    "camp.banner.tag4": "行動營隊團隊",
+    "camp.formats.label": "營隊形式",
+    "camp.formats.title": "挑選最適合家庭的體驗。",
+    "camp.formats.subtitle":
+      "每個營隊都有團隊專案、導師檢核與成果展示，紀錄學生成長。",
+    "camp.formats.card.day.title": "日間營隊",
+    "camp.formats.card.day.body": "每週主題，包含機器人、程式與科學實驗。",
+    "camp.formats.card.day.ages": "7-12 歲",
+    "camp.formats.card.week.title": "每週密集營",
+    "camp.formats.card.week.body": "深入遊戲開發、AI 與工程打造。",
+    "camp.formats.card.week.ages": "9-15 歲",
+    "camp.formats.card.teen.title": "青少年實驗室",
+    "camp.formats.card.teen.body": "作品集專案、領導角色與展示教練。",
+    "camp.formats.card.teen.ages": "13-17 歲",
+    "camp.enroll.label": "營隊報名",
+    "camp.enroll.title": "為暑假或寒假保留名額。",
+    "camp.enroll.subtitle": "採滾動式報名，額滿為止。",
+    "camp.enroll.cta.primary": "立即報名",
+    "camp.enroll.cta.secondary": "與營隊顧問聊聊",
   },
   "zh-Hans": {
     "nav.about": "关于我们",
@@ -331,5 +496,45 @@ export const translations: Record<Locale, Record<TranslationKey, string>> = {
     "contact.offer.cta": "领取免费课程",
     "footer.tagline": "启发加拿大下一代的创新者",
     "footer.legal": "2024 turned-e! academy. 保留所有权利。| 用爱与程序打造",
+    "camp.hero.season": "2026 营队季",
+    "camp.hero.title": "像任务一样的 STEM 营队。",
+    "camp.hero.titleEmphasis": "点燃大胆想法。",
+    "camp.hero.subtitle":
+      "Turned-E Academy 营队把假期变成沉浸式建造实验室。学生在导师陪伴下合作完成编程、机器人与 STEM 设计项目。",
+    "camp.hero.cta.primary": "预留营队名额",
+    "camp.hero.cta.secondary": "下载营队指南",
+    "camp.dayFlow.label": "营队日流程",
+    "camp.dayFlow.title": "打造。测试。展示。",
+    "camp.dayFlow.slot1.time": "9:00 - 10:30",
+    "camp.dayFlow.slot1.body": "团队简报与概念设计。",
+    "camp.dayFlow.slot2.time": "10:45 - 12:30",
+    "camp.dayFlow.slot2.body": "与导师进行制作冲刺与原型测试。",
+    "camp.dayFlow.slot3.time": "1:15 - 3:00",
+    "camp.dayFlow.slot3.body": "编程实验室、测试与展示准备。",
+    "camp.dayFlow.footer.label": "每周成果夜",
+    "camp.dayFlow.footer.cta": "查看作品",
+    "camp.banner.title": "适合 7-17 岁的营队。",
+    "camp.banner.tag1": "全日营队",
+    "camp.banner.tag2": "每周密集",
+    "camp.banner.tag3": "青少年创新实验室",
+    "camp.banner.tag4": "移动营队团队",
+    "camp.formats.label": "营队形式",
+    "camp.formats.title": "挑选最适合家庭的体验。",
+    "camp.formats.subtitle":
+      "每个营队都有团队项目、导师检核与成果展示，记录学生成长。",
+    "camp.formats.card.day.title": "日间营队",
+    "camp.formats.card.day.body": "每周主题，包含机器人、编程与科学实验。",
+    "camp.formats.card.day.ages": "7-12 岁",
+    "camp.formats.card.week.title": "每周密集营",
+    "camp.formats.card.week.body": "深入游戏开发、AI 与工程打造。",
+    "camp.formats.card.week.ages": "9-15 岁",
+    "camp.formats.card.teen.title": "青少年实验室",
+    "camp.formats.card.teen.body": "作品集项目、领导角色与展示辅导。",
+    "camp.formats.card.teen.ages": "13-17 岁",
+    "camp.enroll.label": "营队报名",
+    "camp.enroll.title": "为暑假或寒假保留名额。",
+    "camp.enroll.subtitle": "采取滚动报名，额满为止。",
+    "camp.enroll.cta.primary": "立即报名",
+    "camp.enroll.cta.secondary": "与营队顾问聊聊",
   },
 };
